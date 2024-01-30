@@ -25,6 +25,7 @@ def paletter(image, palette):
    pal = [item for sub_list in pal2d for item in sub_list]
    p_img = Image.new('P', (16, 32))
    p_img.putpalette(pal)
+   p_img.save("mainpal.png","PNG")
 
    im1 = image
    im2 = im1.resize((34, 34), Image.LANCZOS)
@@ -36,18 +37,20 @@ def paletter(image, palette):
 
 if __name__ == '__main__':
 
-   IMAGENAME = "image5.jpg"
+   IMAGENAME = "MercuryNature663x663.png"
    PALETTE = palmeteroid
-   WIDTHCOUNT = 8
-   HEIGHTCOUNT = 8
+   WIDTHCOUNT = 16
+   HEIGHTCOUNT = 16
 
    os.mkdir("MainOutput")
    image = Image.open(IMAGENAME)
-   resizedImage = image.resize((32*WIDTHCOUNT+2,32*HEIGHTCOUNT+2))
+   resizedImage = image.resize((16*WIDTHCOUNT+2,16*HEIGHTCOUNT+2))
    for x in range(WIDTHCOUNT):
       for y in range(HEIGHTCOUNT):
-         im1 = resizedImage.crop((x*32, y*32, x*32+34, y*32+34))
-         paletter(im1, PALETTE).save("MainOutput/" + str(x) + "_" + str(y) + ".png", "PNG")
+         #im1 = resizedImage.crop((x*32, y*32, x*32+34, y*32+34))
+         #paletter(im1, PALETTE).save("MainOutput/" + str(x) + "_" + str(y) + ".png", "PNG")
+         im1 = image.crop((x * 16, y * 16, x * 16 + 18, y * 16 + 18))
+         im1.save("MainOutput/" + str(x) + "_" + str(y) + ".png", "PNG")
 
 
 

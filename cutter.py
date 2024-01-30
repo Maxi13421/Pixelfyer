@@ -14,13 +14,13 @@ def cutEdges(imagename):
         for aaa in range(imarray.shape[0]):
             for aab in range(len(imarray[aaa])):
 
-                if (baa % 2 == 1 and aaa <= 7 and aab <= 7 and aaa < (aaa - 7.5) ** 2 + (aab - 7.5) ** 2 > 7.5 ** 2
-                        or (baa >> 1) % 2 == 1 and aaa >= 24 and aab <= 7 and aaa < (aaa - 23.5) ** 2 + (
-                                aab - 7.5) ** 2 > 7.5 ** 2
-                        or (baa >> 2) % 2 == 1 and aaa <= 7 and aab >= 24 and aaa < (aaa - 7.5) ** 2 + (
-                                aab - 23.5) ** 2 > 7.5 ** 2
-                        or (baa >> 3) % 2 == 1 and aaa >= 24 and aab >= 24 and aaa < (aaa - 23.5) ** 2 + (
-                                aab - 23.5) ** 2 > 7.5 ** 2
+                if (baa % 2 == 1 and aaa <= 9 and aab <= 9 and aaa < (aaa - 10.5) ** 2 + (aab - 10.5) ** 2 > 10.5 ** 2
+                        or (baa >> 1) % 2 == 1 and aaa >= 8 and aab <= 9 and aaa < (aaa - 6.5) ** 2 + (
+                                aab - 10.5) ** 2 > 10.5 ** 2
+                        or (baa >> 2) % 2 == 1 and aaa <= 9 and aab >= 8 and aaa < (aaa - 10.5) ** 2 + (
+                                aab - 6.5) ** 2 > 10.5 ** 2
+                        or (baa >> 3) % 2 == 1 and aaa >= 9 and aab >= 9 and aaa < (aaa - 6.5) ** 2 + (
+                                aab - 6.5) ** 2 > 10.5 ** 2
                 ):
                     outputarray[aaa][aab][3] = 0
                 else:
